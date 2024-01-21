@@ -1,0 +1,58 @@
+﻿@using versta24.ViewModels
+@model OrderList
+
+<div class="container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Номер заказа</th>
+            <td>Город отправителя</td>
+            <td>Адрес отправителя</td>
+            <td>Город получателя</td>
+            <td>Адрес получателя</td>
+            <td>Дата отгрузки</td>
+            <td>Вес груза (грамм)</td>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var order in Model.Orders)
+{
+    <tr>
+        <th><a href="/Orders/Get/@order.Id">@order.FullNumber</a></th>
+        <td><a href="/Orders/Get/@order.Id">@order.Sender.City</a></td>
+        <td><a href="/Orders/Get/@order.Id">@order.Sender.Address</a></td>        
+        <td><a href="/Orders/Get/@order.Id">@order.Recipient.City</a></td>
+        <td><a href="/Orders/Get/@order.Id">@order.Recipient.Address</a></td>
+        <td><a href="/Orders/Get/@order.Id">@order.Pickup</a></td>
+        <td><a href="/Orders/Get/@order.Id">@order.Weight</a></td>
+    </tr>
+}
+    </tbody>
+</table>
+
+<style>
+        table tbody tr td a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: black;
+        }
+
+        table tbody tr th a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: black;
+        }
+
+        table tbody tr td a:hover{
+            color: black;
+        }
+
+        table tbody tr th a:hover {
+            color: black;
+        }
+        </style>
+</div>

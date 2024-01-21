@@ -1,0 +1,21 @@
+﻿@using versta24.ViewModels
+@model Order
+
+<div class="container">
+    <form class="form-control">
+        <label for="FullNumber">Номер отправления</label>
+        <input class="form-control" type="text" asp-for="@Model.FullNumber" readonly></input>
+        <label for="Sender.City">Город отправителя</label>
+        <input class="form-control" type="text" asp-for="@Model.Sender.City" readonly></input>
+        <label for="Sender.Address">Адрес отправителя</label>
+        <input class="form-control" type="text" asp-for="@Model.Sender.Address" readonly></input>
+        <label for="Recipient.City">Город получателя</label>
+        <input class="form-control" type="text" asp-for="@Model.Recipient.City" readonly></input>
+        <label for="Recipient.Address">Адрес получателя</label>
+        <input class="form-control" type="text" asp-for="@Model.Recipient.Address" readonly></input>
+        <label for="Weight">Вес в граммах</label>
+        <input class="form-control" type="number" asp-for="@Model.Weight" readonly></input>
+        <label for="Pickup">Дата</label>
+        <input class="form-control" type="text" asp-for="@Model.Pickup" readonly />
+    </form>
+</div>

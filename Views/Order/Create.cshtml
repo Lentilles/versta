@@ -1,0 +1,56 @@
+﻿@model Order
+
+<form class="form-control" method="post" asp-controller="Order" asp-action="Create">
+
+    <label for="Sender.City">Город отправителя</label>
+    <input class="form-control" type="text" asp-for="@Model.Sender.City"></input>
+    <label for="Sender.Address">Адрес отправителя</label>
+    <input class="form-control" type="text" asp-for="@Model.Sender.Address"></input>
+    <label for="Recipient.City">Город получателя</label>
+    <input class="form-control" type="text" asp-for="@Model.Recipient.City"></input>
+    <label for="Recipient.Address">Адрес получателя</label>
+    <input class="form-control" type="text" asp-for="@Model.Recipient.Address"></input>
+    <label for="Weight">Вес в граммах</label>
+    <input class="form-control" type="number" asp-for="@Model.Weight"></input>
+    <label for="Pickup">Дата</label>
+    <input class="form-control" type="text" asp-for="@Model.Pickup" />
+    <input class="btn btn-primary mt-2" type="submit" value="Отправить" />
+</form>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<script type="text/javascript">
+
+    $('input[name="Pickup"]').daterangepicker({
+        "singleDatePicker": true,
+        "locale": {
+            "format": "D/MM/YYYY",
+            "daysOfWeek": [
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб",
+                "Вс"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+        }
+    });
+</script>
